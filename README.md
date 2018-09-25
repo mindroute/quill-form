@@ -1,5 +1,15 @@
 # Quill Form
-Module for simple form and input field bindings in [Quill](https://github.com/quilljs/quill). Automatically creates hidden input fields for a form and adds submit handling and submit by key (Ctrl+S). You may also specify your own custom input fields. It creates fields for text, html and delta.
+Module for simple form and input field bindings in [Quill](https://github.com/quilljs/quill). Automatically creates hidden input fields for a form and adds submit handling and submit by key (⌘/Ctrl+S). You may also specify your own custom input fields. It creates fields for text, html and delta.
+
+## Installation
+#### Yarn
+```bash
+yarn add quill-form
+```
+#### NPM
+```bash
+npm i quill-form
+```
  
 ## Usage
 To add quill-form to your Quill, simply add the javascript after quill or import it in your project. Make sure that your editor is placed within a form or specify custom input fields.
