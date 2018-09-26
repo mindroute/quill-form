@@ -23,39 +23,28 @@ const config = {
     rules: [
       {
         test: /\.js$/,
-        include: [
-          path.resolve(__dirname, "src/")
-        ],
-        exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [['@babel/preset-env', { modules: false }]]
+            presets: [[
+              '@babel/preset-env',
+              {
+                targets: {
+                  browsers: [
+                    'last 2 Chrome major versions',
+                    'last 2 Firefox major versions',
+                    'last 2 Safari major versions',
+                    'last 2 Edge major versions',
+                    'last 2 iOS major versions',
+                    'last 2 ChromeAndroid major versions',
+                  ]
+                }
+              }
+            
+            ]]
           }
         }
       }
-    ]
-  },
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        uglifyOptions: {
-          compress: {
-            warnings: false,
-            conditionals: true,
-            unused: true,
-            comparisons: true,
-            sequences: true,
-            dead_code: true,
-            evaluate: true,
-            join_vars: true,
-            if_return: true
-          },
-          output: {
-            comments: false
-          }
-        }
-      })
     ]
   }
 };
