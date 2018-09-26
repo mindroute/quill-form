@@ -22,7 +22,6 @@ class Form extends Module {
       this.form.addEventListener("submit", this.update.bind(this), true);
 
       if (this.options.submitKey) {
-        console.log(this.quill.keyboard);
         this.quill.keyboard.addBinding(this.options.submitKey, this.submit.bind(this));
       }
     } 
